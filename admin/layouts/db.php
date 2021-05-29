@@ -1,5 +1,5 @@
 <?php
-$dsn="mysql:host=localhost;dbname=recycle";
+$dsn="mysql:host=localhost;dbname=geridonus";
 $username="root";
 $password="";
 
