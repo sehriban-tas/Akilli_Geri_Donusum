@@ -117,7 +117,10 @@ require("admin/layouts/db.php");
         },
         0: {
           label: 'E'
-        }
+        },
+        2: {
+          label: 'W'
+        },
       };
 
         function initMap() {

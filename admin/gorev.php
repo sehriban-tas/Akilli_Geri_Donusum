@@ -13,7 +13,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Görevli  İşlemleri
+                    Görevli İşlemleri
                     <small>Preview</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -60,63 +60,30 @@
                                         <tr>
                                             <th>Ad-Soyad</th>
                                             <th>Görev Durum</th>
-                                            <th>Sil</th>
-                                            <th>Düzenle</th>
+
                                         </tr>
                                         <?php $select=$conn->query("SELECT * FROM gorevli",PDO::FETCH_OBJ);?>
                                         <?php while($row=$select->fetch()): ?>
                                         <tr>
                                             <td><?=$row->adsoyad?></td>
-                                        <?php 
+                                            <?php 
                                             if($row->status==1){
                                         ?>
                                             <td>
-                                            <button class="btn btn-success">Görevli</button>
+                                                <button class="btn btn-warning">Görevli</button>
+                                            </td>
+                                            <td><a href="mission_complated.php?id=<?=$row->id ?>" name="bitti"
+                                                    class="btn btn-success">Görev Bitti</a>
                                             </td>
                                             <?php  }else{ ?>
                                             <td>
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-                                            Görev Ata
-                                            </button>
+                                                <!-- Button trigger modal -->
+                                                <a href="gorev_ata.php?id=<?=$row->id?>" name="kaydet"
+                                                    class="btn btn-primary">Görev Ata</a>
 
-                                            <!-- Modal -->
-                                            <form role="form"name="my_form" action="fonksiyonlar.php" method="post">
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Görevler</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <select class="form-select col-lg-12" aria-label="Default select example">
-                                                        <?php
-                                                        
-                                                        $gorevler = $conn->query("SELECT * FROM bins where status=1");
-                                                        while($row=$gorevler->fetch()){                                                   
-                                                        
-                                                        ?>
-                                                        <option value="<?=$row->bins_id ?>"><?= substr(($row['bins_name']."-".$row['bins_adress']),0, 60); ?>..</option>
-
-                                                        <?php } ?>
-                                                        </select>
-                                                    </div>
-                                                
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                                                        <button type="button" name="test" class="btn btn-primary">Kaydet</button>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </form>
                                             </td>
                                             <?php } ?>
 
-                                            <td><a href="delete_admin.php?id=<?=$row->admin_id?>" class="btn btn-warning">Sil</a></td>
-                                            <td><a href="update_admin.php?id=<?=$row->admin_id?>" class="btn btn-primary">Düzenle</a></td>
                                         </tr>
                                     </tbody>
                                     <?php endwhile; ?>

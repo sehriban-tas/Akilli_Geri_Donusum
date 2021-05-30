@@ -1,7 +1,7 @@
 <?php
 require_once('layouts/db.php');
 
-if(isset($_POST['gorevli_ekle'])){
+if(isset($_POST['gorevli_ekle']) && !empty($_POST['adsoyad'])){
     $fullname = strip_tags($_POST['adsoyad']);
     
     $insert = $conn->prepare("INSERT INTO gorevli(adsoyad) VALUES(:fullname)");
@@ -15,3 +15,7 @@ if(isset($_POST['gorevli_ekle'])){
         die();
     }
 }
+
+
+
+

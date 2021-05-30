@@ -131,11 +131,14 @@ else{
                                             <td><?=$row->bins_adress?></td>
                                             <td><?=$row->bins_lat?></td>
                                             <td><?=$row->bins_lng?></td>
-                                            <?php if($row->status==false):?>
+                                            <?php if($row->status==0):?>
                                             <td><span class="label label-success">Boş</span></td>
                                             <?php endif; ?>
-                                            <?php if($row->status==true):?>
+                                            <?php if($row->status==1):?>
                                             <td><span class="label label-danger">Dolu</span></td>
+                                            <?php endif; ?>
+                                            <?php if($row->status==2):?>
+                                                <td><span class="label label-warning">Boşaltılıyor</span></td>
                                             <?php endif; ?>
                                             <td><a href="delete_bin.php?id=<?=$row->bins_id?>" class="btn btn-primary">Sil  </a></td>
                                             <td><a href="update_bin.php?id=<?=$row->bins_id?>" class="btn btn-success">Düzenle</a></td>
