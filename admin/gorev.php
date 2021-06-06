@@ -93,8 +93,8 @@
                                             <td>
                                                 <a href="fonksiyonlar.php?id=<?=$row->id?>&sil=<?="sil"?>" name="sil"
                                                     class="btn btn-danger">Sil</a>
-                                                <a href="update_gorevli.php?id=<?=$row->id?>" name="Güncelle"
-                                                    class="btn btn-info">Güncelle</a>
+                                                <a href="update_gorevli.php?id=<?=$row->id?>" 
+                                                    class="btn btn-info">Düzenle</a>
                                             </td>
                                         </tr>
                                     </tbody>
