@@ -144,8 +144,7 @@ require("admin/layouts/db.php");
         <div class="container">
             <div class="col-md-10 col-md-offset-1 section-title text-center">
                 <h2>Servislerimiz</h2>
-                <hr>
-                <p>...</p>
+                <hr> 
             </div>
             <div class="row">
                 <div class="col-md-4 text-center">
